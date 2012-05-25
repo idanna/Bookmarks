@@ -1,4 +1,14 @@
 Bookmark::Application.routes.draw do
+
+	devise_for :users, :skip => [:sessions]
+	as :user do
+		get 'signin' => 'welcome#index', :as => :new_user_session
+		post 'signin' => 'devise/sessions#create', :as => :user_session
+		delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+	end
+	
+	resources :bookmarks
+	
   get "welcome/index"
 
 	root :to => 'welcome#index'	

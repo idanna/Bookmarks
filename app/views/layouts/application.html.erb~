@@ -11,7 +11,7 @@
 	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>    
 	<h1>Welcome <%= current_user.email %>!</h1>
 <% else %>
-	<h1>Welcome To the Bookmark App!</h1>
+	<h1>Welcome To the Bookmark App, Please signin:</h1>
 <% end %>
 <%= yield %>
 
