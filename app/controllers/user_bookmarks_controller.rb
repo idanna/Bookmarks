@@ -1,4 +1,5 @@
 class UserBookmarksController < ApplicationController
+	before_filter :authenticate_user!
 	def index
 		@bookmark = UserBookmark.new
 		@bookmarks = current_user.user_bookmarks.all
@@ -18,4 +19,17 @@ class UserBookmarksController < ApplicationController
 		@bookmark.delete		
 		redirect_to user_bookmarks_path, :notice => 'Bookmark was succesfully deleted !' 
 	end
+	
+	def multi_destroy
+		@count = 0
+		delete_list = params[:delete].keys
+		delete_list.each do |id| 
+			current_user.user_bookmarks.find(id).delete
+			@count += 1		
+		end
+		@book_work = "Bookmark was"
+		@book_work = "Bookmarks were" unless @count == 1
+		redirect_to user_bookmarks_path, :notice => "#{@count} #{@book_work} succesfully deleted."
+	end
+	
 end

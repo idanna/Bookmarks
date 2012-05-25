@@ -27,6 +27,18 @@ Given /^I press on the delete link$/ do
 end
 
 Then /^I should have not have "([^"]*)" in the database$/ do |arg1|
-  bk = UserBookmark.first
+  bk = UserBookmark.find_by_link(arg1)
   bk.nil?
 end
+
+#step 5
+
+Given /^I check both bookmarks checkboxes$/ do
+  check('delete_1')
+  check('delete_2')
+end
+
+Given /^I press multiply delete$/ do
+  click_button "Delete Selected"
+end
+

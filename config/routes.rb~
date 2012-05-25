@@ -7,7 +7,7 @@ Bookmark::Application.routes.draw do
 		delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
 	end
 	
-	resources :userbookmarks
+	resources :user_bookmarks
 	
   get "welcome/index"
 

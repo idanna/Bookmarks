@@ -1,0 +1,23 @@
+<h1> List of all your bookmark </h1>
+<%= form_tag(multi_destroy_user_bookmarks_path, :method => "post") do %>
+<table>
+  <tr>
+    <th>Mark</th>
+    <th>Link</th>
+    <th></th>
+  </tr>
+<p> <%= flash[:notice] %> </p>
+	<% @bookmarks.each do |bookmark| %>
+		<tr>
+			<td><%= check_box_tag("delete[#{bookmark.id}]",bookmark.id) %></td>
+		  <td><%= bookmark.link %></td>
+		  <td><%= link_to 'Delete', user_bookmark_path(bookmark.id), :confirm => 'Are you sure?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+
+	<br />
+  <%= submit_tag("Delete Selected", :confirm => 'Are you sure?') %>
+<% end %>
+<br /> 
+
