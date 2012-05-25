@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
   
   #overriding devise default redirect
   def after_sign_in_path_for(resource)
-		bookmarks_path
+		user_bookmarks_path
 	end
 end

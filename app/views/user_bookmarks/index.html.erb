@@ -1,0 +1,34 @@
+<%= form_for(@bookmark) do |f| %>
+  <div class="field">
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1> List of all you'r bookmark </h1>
+<table>
+  <tr>
+    <th>Mark</th>
+    <th>Link</th>
+    <th></th>
+  </tr>
+<p> <%= flash[:notice] %> </p>
+<%= form_tag("/bookmarks/multi_destroy", :method => "post") do %>
+	<% @bookmarks.each do |bookmark| %>
+		<tr>
+			<td><%= check_box_tag("destroy[#{bookmark.id}]",bookmark.id) %></td>
+		  <td><%= bookmark.link %></td>
+		  <td><%= bookmark.link %></td>
+		  <td><%= link_to 'Delete', user_bookmark_path(bookmark.id), :confirm => 'Are you sure?', :method => :delete %></td>
+		</tr>
+	<% end %>
+	</table>
+
+	<br />
+  <%= submit_tag("Destroy Selected") %>
+<% end %>
+<br /> 
+

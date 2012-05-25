@@ -15,13 +15,13 @@ Then /^I should have a new user in the database$/ do
 end
 
 Then /^I should be on the bookmark page$/ do
-	  current_path.should == bookmarks_path
+	  current_path.should == user_bookmarks_path
 end
 
 
 #signout
 
-Given /^I am singed in$/ do
+Given /^I am signed in$/ do
   email = 'a@b.c'
   password = '314159'
   User.new(:email => email, :password => password, :password_confirmation => password).save!
