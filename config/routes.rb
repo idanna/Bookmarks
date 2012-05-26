@@ -13,6 +13,8 @@ Bookmark::Application.routes.draw do
 		end
 	end
 	
+	post "youtube" => "youtube#get_info", :as => :youtube
+	
   get "welcome/index"
 
 	root :to => 'welcome#index'	

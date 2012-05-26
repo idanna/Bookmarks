@@ -1,4 +1,4 @@
-<h1> List of all your bookmark </h1>
+<h2> List of all your bookmark </h2>
 <%= form_tag(multi_destroy_user_bookmarks_path, :method => "post") do %>
 <table>
   <tr>
@@ -8,9 +8,12 @@
   </tr>
 <p> <%= flash[:notice] %> </p>
 	<% @bookmarks.each do |bookmark| %>
+		<% abs_link = bookmark.link %>
+		<% abs_link = "http://" + bookmark.link unless bookmark.link.match(/(http|https):\/\//) %>
 		<tr>
 			<td><%= check_box_tag("delete[#{bookmark.id}]",bookmark.id) %></td>
-		  <td><%= bookmark.link %></td>
+		  <td><%= link_to abs_link, bookmark.link, :target => "_blank"
+ %></td>
 		  <td><%= link_to 'Delete', user_bookmark_path(bookmark.id), :confirm => 'Are you sure?', :method => :delete %></td>
 		</tr>
 	<% end %>

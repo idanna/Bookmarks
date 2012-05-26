@@ -26,4 +26,3 @@ Feature: User can manage bookmarks
     Then I should have not have "www.youtube.com" in the database
     And I should have not have "www.youtube.com" in the database
     And I should see "2 Bookmarks were succesfully deleted."
-

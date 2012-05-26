@@ -3,7 +3,7 @@ Given /^I fill in bookmark link with "([^"]*)"$/ do |arg1|
 end
 
 Given /^I press submit$/ do
-  click_button 'Create User bookmark'
+  click_button 'Save link to bookmarks list'
 end
 
 Then /^I should have a new bookmark in my databse$/ do
@@ -41,4 +41,6 @@ end
 Given /^I press multiply delete$/ do
   click_button "Delete Selected"
 end
+
+
 

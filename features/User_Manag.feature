@@ -12,4 +12,4 @@ Feature: User Managment
 			And I should be on the bookmark page
 			And I press logout
 			Then I should be on the welcome screen
-			And I should see "Signed out successfully."
+			And I should see "Please login to the app:"

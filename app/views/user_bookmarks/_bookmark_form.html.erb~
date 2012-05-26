@@ -1,0 +1,9 @@
+<%= form_for(@bookmark) do |f| %>
+  <div class="field">
+    <%= f.label :link, "Please enter a link to be saved:" %><br />
+    <%= f.text_field :link %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Save link to bookmarks list %>
+  </div>
+<% end %>

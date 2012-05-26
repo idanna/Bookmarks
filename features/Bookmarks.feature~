@@ -25,5 +25,10 @@ Feature: User can manage bookmarks
     And I press multiply delete
     Then I should have not have "www.youtube.com" in the database
     And I should have not have "www.youtube.com" in the database
-    And I should see "2 Bookmarks was succesfully deleted."
+    And I should see "2 Bookmarks were succesfully deleted."
 
+@javascript
+		Scenario: User enters Youtube video link
+			Given I fill in bookmark link with "https://www.youtube.com/watch?v=IOb8otk7Y0U&ob=av2n"
+			And I wait 2 seconds
+			Then I should see "Led Zeppelin - Moby Dick (Live at Royal Albert Hall 1970)"

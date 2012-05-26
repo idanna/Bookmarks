@@ -1,12 +1,7 @@
-<%= form_for(@bookmark) do |f| %>
-  <div class="field">
-    <%= f.label :link %><br />
-    <%= f.text_field :link %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+
+<%= render 'bookmark_form' %>
+
+<%= render 'youtube' %>
 
 <% if @bookmarks.empty? %>
 	</br >

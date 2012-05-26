@@ -1,0 +1,3 @@
+$(".youtube").html("<h2> Youtube Information: </h2>");
+$(".youtube").append("<div id='movie-title'><%= escape_javascript(@video.title) %></div>");
+$(".youtube").append("<img src=<%= escape_javascript(@video.thumbnails[0].url) %> />");

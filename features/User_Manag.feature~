@@ -8,7 +8,7 @@ Feature: User Managment
 			And I should be on the bookmark page
 			
 		Scenario: Signed user want to signout
-			Given I am singed in
+			Given I am signed in
 			And I should be on the bookmark page
 			And I press logout
 			Then I should be on the welcome screen
