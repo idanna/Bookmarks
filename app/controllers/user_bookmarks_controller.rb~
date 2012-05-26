@@ -1,6 +1,5 @@
 class UserBookmarksController < ApplicationController
 	before_filter :authenticate_user!
-	
 	def index
 		@bookmark = UserBookmark.new
 		@bookmarks = current_user.user_bookmarks.all
