@@ -29,7 +29,8 @@ class UserBookmarksController < ApplicationController
 		end
 		@book_work = "Bookmark was"
 		@book_work = "Bookmarks were" unless @count == 1
-		redirect_to user_bookmarks_path, :notice => "#{@count} #{@book_work} succesfully deleted."
+		flash[:bookmarks] = "#{@count} #{@book_work} succesfully deleted."
+		redirect_to user_bookmarks_path
 	end
 	
 end
