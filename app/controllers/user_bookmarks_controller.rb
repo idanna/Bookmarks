@@ -7,12 +7,12 @@ class UserBookmarksController < ApplicationController
 	end
 	
 	def create
-    @bookmark = current_user.user_bookmarks.new(params[:user_bookmark])
-    if @bookmark.save
-      redirect_to root_path, notice: 'Bookmark was successfully created.'
-    else # actualy no reason for a link to fails, cause no validations
-      redirect_to root_path, notice: 'You have an error.'
-    end
+		@bookmark = current_user.user_bookmarks.new(params[:user_bookmark])
+		if @bookmark.save
+			redirect_to root_path, notice: 'Bookmark was successfully created.'
+		else # actualy no reason for a link to fails, cause no validations
+			redirect_to root_path, notice: 'You have an error.'
+		end
 	end
 	
 	def destroy
