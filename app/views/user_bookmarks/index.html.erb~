@@ -1,18 +1,11 @@
-
+<%= flash[:notice] %>
 <%= render 'bookmark_form' %>
 
 <%= render 'youtube' %>
-<%= form_tag youtube_path,:id => 'youtube_check', :remote => true do |f| %>
-  <% hidden_field_tag 'video_id' %>
-<% end %>
-
-<div class='youtube'>
-</div>
-
 
 <% if @bookmarks.empty? %>
 	</br >
-	<%= flash[:notice] %>
+	<%= flash[:bookmarks] %>
 	<h2> You dont have any bookmarks.</h2>
 <% else %>
 	<%= render 'bookmarks_list' %>

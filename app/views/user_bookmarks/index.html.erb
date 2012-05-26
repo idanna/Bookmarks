@@ -1,11 +1,10 @@
-
 <%= render 'bookmark_form' %>
 
 <%= render 'youtube' %>
 
 <% if @bookmarks.empty? %>
 	</br >
-	<%= flash[:notice] %>
+	<%= flash[:bookmarks] %>
 	<h2> You dont have any bookmarks.</h2>
 <% else %>
 	<%= render 'bookmarks_list' %>

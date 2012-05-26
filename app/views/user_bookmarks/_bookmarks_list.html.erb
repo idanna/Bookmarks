@@ -6,7 +6,7 @@
     <th>Link</th>
     <th></th>
   </tr>
-<p> <%= flash[:notice] %> </p>
+<p> <%= flash[:bookmarks] %> </p>
 	<% @bookmarks.each do |bookmark| %>
 		<% abs_link = bookmark.link %>
 		<% abs_link = "http://" + bookmark.link unless bookmark.link.match(/(http|https):\/\//) %>
